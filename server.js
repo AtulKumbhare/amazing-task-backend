@@ -16,8 +16,7 @@ const nowIso = () => new Date().toISOString();
 const ensureId = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
 
 // MongoDB connection
-const MONGODB_URI = "mongodb+srv://AtulKumbhare:Atul14694@cluster0.j6gibj5.mongodb.net/todos";
-mongoose.connect(MONGODB_URI, { 
+mongoose.connect(process.env.MONGODB_URI, { 
   serverSelectionTimeoutMS: 5000
 }).then(() => {
   console.log('Connected to MongoDB');
